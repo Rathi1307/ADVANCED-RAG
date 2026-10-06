@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-app: #08090C;
+    --bg-panel: #0E1117;
+    --bg-card: #141822;
+    --border-subtle: #1F2633;
+    --border-accent: #2D3748;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: #E2E8F0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, monospace;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom engineering scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #08090C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1F2633;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2D3748;
+}
+
+/* Precision panel styles */
+.sre-panel {
+  background-color: #0E1117;
+  border: 1px solid #1E232F;
+}
+
+.sre-panel-interactive {
+  background-color: #0E1117;
+  border: 1px solid #1E232F;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sre-panel-interactive:hover {
+  border-color: #2E384D;
+  background-color: #121620;
+}
+
+.sre-card {
+  background-color: #141822;
+  border: 1px solid #1F2633;
+}
+
+/* Precision status indicators */
+.status-pill-verified {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34D399;
+}
+
+.status-pill-warning {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  color: #FBBF24;
+}
+
+.status-pill-critical {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  color: #F87171;
+}
+
+.status-pill-system {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  color: #60A5FA;
+}
+
+.status-pill-neutral {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #94A3B8;
+}
+
+/* Subtle pulse without excessive animations */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
